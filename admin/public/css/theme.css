@@ -114,7 +114,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #333333;
+    color: #acacac;
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
@@ -307,8 +307,8 @@ section {
 }
 
 .main-content {
-    padding-top: 116px;
-    min-height: 100vh;
+    padding-top: 50px;
+    /* min-height: 100vh; */
 }
 
 @media (max-width: 991px) {

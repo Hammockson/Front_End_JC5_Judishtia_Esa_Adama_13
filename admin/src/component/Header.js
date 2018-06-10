@@ -5,177 +5,38 @@ class Header extends Component {
     render() {
         return (
             
-          <header className="header-desktop">
-          <div className="section__content section__content--p30">
-            <div className="container-fluid">
-              <div className="header-wrap">
-                <form className="form-header" action method="POST">
-                  <input className="au-input au-input--xl" type="text" name="search" placeholder="Search for datas & reports..." />
-                  <button className="au-btn--submit" type="submit">
-                    <i className="zmdi zmdi-search" />
-                  </button>
-                </form>
-                <div className="header-button">
-                  <div className="noti-wrap">
-                    <div className="noti__item js-item-menu">
-                      <i className="zmdi zmdi-comment-more" />
-                      <span className="quantity">1</span>
-                      <div className="mess-dropdown js-dropdown">
-                        <div className="mess__title">
-                          <p>You have 2 news message</p>
-                        </div>
-                        <div className="mess__item">
-                          <div className="image img-cir img-40">
-                            <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
-                          </div>
-                          <div className="content">
-                            <h6>Vincent Wardhana</h6>
-                            <p>Sa bales chat si Willy</p>
-                            <span className="time">3 min ago</span>
-                          </div>
-                        </div>
-                        <div className="mess__item">
-                          <div className="image img-cir img-40">
-                            <img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
-                          </div>
-                          <div className="content">
-                            <h6>Willy Jodhi</h6>
-                            <p>Oi Dota Yok</p>
-                            <span className="time">Yesterday</span>
-                          </div>
-                        </div>
-                        <div className="mess__footer">
-                          <a href="#">View all messages</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="noti__item js-item-menu">
-                      <i className="zmdi zmdi-email" />
-                      <span className="quantity">1</span>
-                      <div className="email-dropdown js-dropdown">
-                        <div className="email__title">
-                          <p>You have 3 New Emails</p>
-                        </div>
-                        <div className="email__item">
-                          <div className="image img-cir img-40">
-                            <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
-                          </div>
-                          <div className="content">
-                            <p>Meeting about new product...</p>
-                            <span>Cynthia Harvey, 3 min ago</span>
-                          </div>
-                        </div>
-                        <div className="email__item">
-                          <div className="image img-cir img-40">
-                            <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
-                          </div>
-                          <div className="content">
-                            <p>Meeting about new product...</p>
-                            <span>Cynthia Harvey, Yesterday</span>
-                          </div>
-                        </div>
-                        <div className="email__item">
-                          <div className="image img-cir img-40">
-                            <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
-                          </div>
-                          <div className="content">
-                            <p>Meeting about new product...</p>
-                            <span>Cynthia Harvey, April 12,,2018</span>
-                          </div>
-                        </div>
-                        <div className="email__footer">
-                          <a href="#">See all emails</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="noti__item js-item-menu">
-                      <i className="zmdi zmdi-notifications" />
-                      <span className="quantity">3</span>
-                      <div className="notifi-dropdown js-dropdown">
-                        <div className="notifi__title">
-                          <p>You have 3 Notifications</p>
-                        </div>
-                        <div className="notifi__item">
-                          <div className="bg-c1 img-cir img-40">
-                            <i className="zmdi zmdi-email-open" />
-                          </div>
-                          <div className="content">
-                            <p>You got a email notification</p>
-                            <span className="date">April 12, 2018 06:50</span>
-                          </div>
-                        </div>
-                        <div className="notifi__item">
-                          <div className="bg-c2 img-cir img-40">
-                            <i className="zmdi zmdi-account-box" />
-                          </div>
-                          <div className="content">
-                            <p>Your account has been blocked</p>
-                            <span className="date">April 12, 2018 06:50</span>
-                          </div>
-                        </div>
-                        <div className="notifi__item">
-                          <div className="bg-c3 img-cir img-40">
-                            <i className="zmdi zmdi-file-text" />
-                          </div>
-                          <div className="content">
-                            <p>You got a new file</p>
-                            <span className="date">April 12, 2018 06:50</span>
-                          </div>
-                        </div>
-                        <div className="notifi__footer">
-                          <a href="#">All notifications</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="account-wrap">
-                    <div className="account-item clearfix js-item-menu">
-                      <div className="image">
-                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                      </div>
-                      <div className="content">
-                        <a className="js-acc-btn" href="#">Esa Adama</a>
-                      </div>
-                      <div className="account-dropdown js-dropdown">
-                        <div className="info clearfix">
-                          <div className="image">
-                            <a href="#">
-                              <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                            </a>
-                          </div>
-                          <div className="content">
-                            <h5 className="name">
-                              <a href="#">Esa Adama</a>
-                            </h5>
-                            <span className="email">j.esa.adama@gmail.com</span>
-                          </div>
-                        </div>
-                        <div className="account-dropdown__body">
-                          <div className="account-dropdown__item">
-                            <a href="#">
-                              <i className="zmdi zmdi-account" />Account</a>
-                          </div>
-                          <div className="account-dropdown__item">
-                            <a href="#">
-                              <i className="zmdi zmdi-settings" />Setting</a>
-                          </div>
-                          <div className="account-dropdown__item">
-                            <a href="#">
-                              <i className="zmdi zmdi-money-box" />Billing</a>
-                          </div>
-                        </div>
-                        <div className="account-dropdown__footer">
-                          <a href="#">
-                            <i className="zmdi zmdi-power" />Logout</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <Link to="Homepage" className="navbar-brand">ANIMICO.admin</Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarColor02">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item active">
+                  <Link to="/Homepage" className="nav-link">Dashboard <span className="sr-only">(current)</span></Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/Products" className="nav-link">Products</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/Historytrans" className="nav-link">History</Link>
+                </li>
+              </ul>
+              <form className="form-inline my-2 my-lg-0">
+                <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+                <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              </form>
+              <ul className="navbar-nav navbar-right">
+                <li className="nav-item">
+                  <p className="nav-link">Esa Adama <span className="sr-only"></span></p>
+                </li>
+                <li className="nav-item">
+                  <Link to="/Login" className="nav-link">Logout</Link>
+                </li>
+              </ul>
             </div>
-          </div>
-        </header>
+          </nav>
+
         
     
         );
