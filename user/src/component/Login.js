@@ -39,14 +39,14 @@ class Login extends Component {
                                 <label className="form-check-label" htmlFor="exampleCheck1">Remember Me</label>
                                 </div>
                                 <div style={{textAlign: 'center'}}>
-                                <Link to="/Homepage" type="submit" className="btn animico-btn animico-txt3">LOGIN</Link>
+                                <a href="/Homepage" type="submit" className="btn animico-btn animico-txt3">LOGIN</a>
                                 </div>
                             </form>
                             </div>
                             {/* ALTERNATIVE */}
                             <div style={{textAlign: 'center', padding: 37}}>
                             <p className="animico-txt4b">Have not account yet?</p><br />
-                            <Link to="/Register" className="animico-txt4b">SIGN UP</Link>
+                            <a href="/Register" className="animico-txt4b">SIGN UP</a>
                             </div>
                         </div>
                         {/* RIGHT */}

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 class Cart extends Component {
     render() {
         return (
             <div>
-                {/* CONTENT */}
+                <Header />
+                
                 <div style={{paddingTop: '5%', paddingBottom: '10%'}}>
                     <div className="container">
                         <h3 className="animico-txt5" style={{paddingBottom: 10}}>MY CART<span style={{fontSize: 12}}>/ YOU HAVE 2 ITEMS IN YOUR CART</span></h3>
@@ -31,7 +34,7 @@ class Cart extends Component {
                                 <td>IDR 90.000</td>
                                 <td>1</td>
                                 <td>IDR 90.000</td>
-                                <td><Link to="/Invoice" className="btn animico-btnc animico-txt5b">REMOVE</Link></td>
+                                <td><a href="/Invoice" className="btn animico-btnc animico-txt5b">REMOVE</a></td>
                                 </tr>
                                 <tr>
                                 <th scope="row"><img src="img/hoodiemini.jpg" /></th>
@@ -39,7 +42,7 @@ class Cart extends Component {
                                 <td>IDR 130.000</td>
                                 <td>1</td>
                                 <td>IDR 130.000</td>
-                                <td><Link to="/Invoice" className="btn animico-btnc animico-txt5b">REMOVE</Link></td>
+                                <td><a href="/Invoice" className="btn animico-btnc animico-txt5b">REMOVE</a></td>
                                 </tr>
                             </tbody>
                             </table>
@@ -78,12 +81,14 @@ class Cart extends Component {
                             </div>
                             </div>
                             <div style={{textAlign: 'right'}}>
-                            <Link to="/Checkout" className="btn animico-btnc animico-txt5b">PROCEED FOR PAYMENT</Link>
+                            <a href="/Checkout" className="btn animico-btnc animico-txt5b">PROCEED FOR PAYMENT</a>
                             </div>
                         </div>
                         </div>
                     </div>
                 </div>
+                
+                <Footer />
             </div>
         );
     }

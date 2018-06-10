@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 class Checkout extends Component {
     render() {
         return (
             <div>
-                {/* CONTENT */}
+                <Header />
+
                 <div className="container" style={{marginTop: '10%', marginBottom: '10%'}}>
                     <div className="col-md-6" style={{backgroundColor: '#162345', padding: 50}}> 
                         <div className="animico-txt5b" style={{marginBottom: 50}}>
@@ -80,11 +83,12 @@ class Checkout extends Component {
                         <div className="col-md-2"><input type="name" className="form-control square" id="exampleInputFirstName1" aria-describedby="emailHelp" placeholder="CVC" /></div>   
                         </div>
                         <div style={{paddingTop: 60, paddingBottom: 60, textAlign: 'center'}}>
-                        <Link to="/Invoice" className="btn animico-btn animico-txt5b">CHECKOUT</Link>   
+                        <a href="/Invoice" className="btn animico-btn animico-txt5b">CHECKOUT</a>   
                         </div>
                     </div>
                 </div>
-                {/* CONTENT END */}
+                
+                <Footer />
             </div>
         );
     }

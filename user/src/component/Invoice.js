@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 class Invoice extends Component {
     render() {
         return (
             <div>
-                {/* CONTENT */}
+                <Header />
+
                 <div className="container animico-txt3" style={{backgroundColor: '#ffffff', marginTop: '3%', padding: 50}}>
                     <div className="row animico-txt3"> 
                         <div className="col-md-12" style={{textAlign: 'center'}}>
@@ -80,11 +83,12 @@ class Invoice extends Component {
                         </tbody>
                         </table>
                         <div className="col-md-12" style={{textAlign: 'center', padding: 50}}>
-                        <Link to="#" className="btn animico-btn animico-txt1">DOWNLOAD PDF</Link>
+                        <a href="#" className="btn animico-btn animico-txt1">DOWNLOAD PDF</a>
                         </div>
                     </div>
                 </div>
-                {/* CONTENT END */}
+                
+                <Footer />
             </div>
         );
     }

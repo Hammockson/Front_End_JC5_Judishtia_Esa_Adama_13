@@ -48,14 +48,14 @@ class Register extends Component {
                                 <label className="form-check-label" htmlFor="exampleCheck1">I agree to the terms &amp; conditions</label>
                                 </div>
                                 <div style={{textAlign: 'center'}}>
-                                <Link to="/Login" type="submit" className="btn animico-btn animico-txt3">SIGNUP</Link>
+                                <a href="/Login" type="submit" className="btn animico-btn animico-txt3">SIGNUP</a>
                                 </div>
                             </form>
                             </div>
                             {/* ALTERNATIVE */}
                             <div style={{textAlign: 'center', padding: 37}}>
                             <p className="animico-txt4b">Already have an account?</p><br />
-                            <Link to="/Login" className="animico-txt4b">LOGIN</Link>
+                            <a href="/Login" className="animico-txt4b">LOGIN</a>
                             </div>
                         </div>
                         {/* RIGHT */}

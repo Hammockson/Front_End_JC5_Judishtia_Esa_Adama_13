@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 class EditProfile extends Component {
     render() {
         return (
             <div>
-                {/* CONTENT */}
+                <Header />
+                
                 <div className="container" style={{marginTop: 100, marginBottom: 100}}>
                     <div>
-                        <Link to="/Profile" className="fa fa-angle-left"><span className="animico-txt1">   BACK TO PROFILE</span></Link>
+                        <a href="/Profile" className="fa fa-angle-left"><span className="animico-txt1">   BACK TO PROFILE</span></a>
                     </div>
                     <div style={{textAlign: 'center'}}>
                         <h2 className="animico-txt5" style={{marginBottom: 100}}>EDIT PROFILE</h2>
@@ -96,7 +99,8 @@ class EditProfile extends Component {
                         </div>
                     </div>
                 </div>
-                {/* CONTENT END */}
+
+                <Footer />
             </div>
         );
     }

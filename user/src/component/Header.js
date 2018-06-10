@@ -17,25 +17,25 @@ class Header extends Component {
               <span className="icon-bar" />
               <span className="icon-bar" />
             </button>
-            <Link to="/Homepage" className="navbar-brand" >Animico</Link>
+            <a href="/Homepage" className="navbar-brand" >Animico</a>
           </div>
           
           <div className="collapse navbar-collapse" id="navbar-collapse-3">
             <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/Homepage">Home</Link></li>
+              <li><a href="/Homepage">Home</a></li>
               <li className="dropdown">
-                <Link to="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span className="caret" /></Link>
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span className="caret" /></a>
                 <ul className="dropdown-menu anim-dropdown-menu animico-txt2b">
-                  <li><Link to="/ProductList">New Arrivals</Link></li>
+                  <li><a href="/ProductList">New Arrivals</a></li>
                   <li role="separator" className="divider" />
-                  <li><Link to="/ProductList">T-Shirt</Link></li>
-                  <li><Link to="/ProductList">Hoodie</Link></li>
-                  <li><Link to="/ProductList">Backpack</Link></li>
+                  <li><a href="/ProductList">T-Shirt</a></li>
+                  <li><a href="/ProductList">Hoodie</a></li>
+                  <li><a href="/ProductList">Backpack</a></li>
                   <li role="separator" className="divider" />
-                  <li><Link to="/ProductList">All Products</Link></li>
+                  <li><a href="/ProductList">All Products</a></li>
                 </ul>
               </li>
-              <li><Link to="#">Store Location</Link></li>
+              <li><a href="#">Store Location</a></li>
               <div className="btn-group">
                 <button type="button" className="btn animico-btnc dropdown-toggle animico-txt4" data-toggle="dropdown" style={{marginRight: 10}}>
                   <img src="img/Icon/shopping-cart.png" style={{width: 20, height: 20}} />   
@@ -49,8 +49,8 @@ class Header extends Component {
                   <p>IDR 120.000</p>
                   <li className="divider" />
                   <p>Total IDR 320.000</p>
-                  <Link to="Cart"><button type="button" className="btn animico-btnc animico-txt5">Cart</button></Link>
-                  <Link to="Checkout"><button type="button" className="btn animico-btnc animico-txt5">Checkout</button></Link>  
+                  <a href="Cart"><button type="button" className="btn animico-btnc animico-txt5">Cart</button></a>
+                  <a href="Checkout"><button type="button" className="btn animico-btnc animico-txt5">Checkout</button></a>  
                 </ul>
               </div>
               <div className="btn-group">
@@ -58,8 +58,8 @@ class Header extends Component {
                   <img src="img/Icon/user.png" style={{width: 20, height: 20}} />
                 </button>
                 <ul className="dropdown-menu anim-dropdown-menu animico-txt2b" role="menu">
-                  <li><Link to="/Profile">View Profile</Link></li>
-                  <li><Link to="/Login">Log Out</Link></li>
+                  <li><a href="/Profile">View Profile</a></li>
+                  <li><a href="/Login">Log Out</a></li>
                 </ul>
               </div>
               <li>

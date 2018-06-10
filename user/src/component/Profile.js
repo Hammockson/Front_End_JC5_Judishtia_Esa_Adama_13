@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 // import AvatarRound from '../img/101.png'
 import { Link } from 'react-router-dom';
 
@@ -8,7 +10,8 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                {/* CONTENT */}
+                <Header />
+
                 <div style={{marginTop: 100, marginBottom: 100}}>
                     <div className="container" style={{backgroundColor: '#27282c'}}>
                         <div className="col-md-3">
@@ -23,7 +26,7 @@ class Profile extends Component {
                         <span className="anim-badge2 animico-txt3b" style={{padding: 10}}>PREMIUM MEMBER</span>
                         </div>
                         <div className="col-md-3" style={{textAlign: 'center', marginTop: 100}}>
-                        <Link to="/EditProfile" className="btn animico-btnc animico-txt1">EDIT PROFILE</Link>
+                        <a href="/EditProfile" className="btn animico-btnc animico-txt1">EDIT PROFILE</a>
                         </div>
                     </div>
                     <div className="container animico-txt5" style={{paddingTop: 40}}>
@@ -34,12 +37,12 @@ class Profile extends Component {
                                 <div className="tabbable-line">
                                 <ul className="nav nav-tabs">
                                     <li className="active">
-                                    <Link to="#tab_default_1" data-toggle="tab">
-                                        Wishlist </Link>
+                                    <a href="#tab_default_1" data-toggle="tab">
+                                        Wishlist </a>
                                     </li>
                                     <li>
-                                    <Link to="#tab_default_2" data-toggle="tab">
-                                        Transaction History </Link>
+                                    <a href="#tab_default_2" data-toggle="tab">
+                                        Transaction History </a>
                                     </li>
                                 </ul>
                                 <div className="tab-content" style={{marginTop: 50}}>
@@ -49,59 +52,59 @@ class Profile extends Component {
                                         <h3 style={{paddingBottom: 50}}>MY WISHLIST</h3>
                                         </div>
                                         <div className="col-md-3" style={{padding: 30}}>
-                                        <Link to="/ProductDetailWishlist"><img src="img/Products/Product Detail/Hoodie-Zebra.png" /></Link>
+                                        <a href="/ProductDetailWishlist"><img src="img/Products/Product Detail/Hoodie-Zebra.png" /></a>
                                         <div>
                                             <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO HOODIE</p>
                                             <p className="animico-txt5" style={{fontSize: 18}}>ZEBRA SQUARE </p>
                                         </div><br />
                                         <div>
-                                            <Link to="#">
+                                            <a href="#">
                                             <button className="btn animico-btnc animico-txt5b" style={{fontSize: 12}}>
                                                 ADD TO CART
                                             </button>
-                                            </Link>
+                                            </a>
                                         </div>
                                         </div>
                                         <div className="col-md-3" style={{padding: 30}}>
-                                        <Link to="/ProductDetailWishlist"><img src="img/Products/Product Detail/Whale Tshirt Fix.png" /></Link>
+                                        <a href="/ProductDetailWishlist"><img src="img/Products/Product Detail/Whale Tshirt Fix.png" /></a>
                                         <div>
                                             <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO HOODIE</p>
                                             <p className="animico-txt5" style={{fontSize: 18}}>ZEBRA SQUARE </p>
                                         </div><br />
                                         <div>
-                                            <Link to="#">
+                                            <a href="#">
                                             <button className="btn animico-btnc animico-txt5b" style={{fontSize: 12}}>
                                                 ADD TO CART
                                             </button>
-                                            </Link>
+                                            </a>
                                         </div>
                                         </div>
                                         <div className="col-md-3" style={{padding: 30}}>
-                                        <Link to="/ProductDetailWishlist"><img src="img/Products/Product Detail/Backpack Pink.png" /></Link>
+                                        <a href="/ProductDetailWishlist"><img src="img/Products/Product Detail/Backpack Pink.png" /></a>
                                         <div>
                                             <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO HOODIE</p>
                                             <p className="animico-txt5" style={{fontSize: 18}}>ZEBRA SQUARE </p>
                                         </div><br />
                                         <div>
-                                            <Link to="#">
+                                            <a href="#">
                                             <button className="btn animico-btnc animico-txtb5" style={{fontSize: 12}}>
                                                 ADD TO CART
                                             </button>
-                                            </Link>
+                                            </a>
                                         </div>
                                         </div>
                                         <div className="col-md-3" style={{padding: 30}}>
-                                        <Link to="/ProductDetailWishlist"><img src="img/Products/Product Detail/Backpack Pink.png" /></Link>
+                                        <a href="/ProductDetailWishlist"><img src="img/Products/Product Detail/Backpack Pink.png" /></a>
                                         <div>
                                             <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO HOODIE</p>
                                             <p className="animico-txt5" style={{fontSize: 18}}>ZEBRA SQUARE </p>
                                         </div><br />
                                         <div>
-                                            <Link to="#">
+                                            <a href="#">
                                             <button className="btn animico-btnc animico-txt5b" style={{fontSize: 12}}>
                                                 ADD TO CART
                                             </button>
-                                            </Link>
+                                            </a>
                                         </div>
                                         </div>
                                     </div>
@@ -126,21 +129,21 @@ class Profile extends Component {
                                             <td>04/06/2018</td>
                                             <td>ANMTSH1001</td>
                                             <td>IDR 130.000</td>
-                                            <td><Link to="Invoice.html" className="btn animico-btn animico-txt1">SEE DETAIL</Link></td>
+                                            <td><a href="/Invoice" className="btn animico-btn animico-txt1">SEE DETAIL</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
                                             <td>05/09/2018</td>
                                             <td>ANMTSH1002</td>
                                             <td>IDR 560.000</td>
-                                            <td><Link to="Invoice.html" className="btn animico-btn animico-txt1">SEE DETAIL</Link></td>
+                                            <td><a href="/Invoice" className="btn animico-btn animico-txt1">SEE DETAIL</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">3</th>
                                             <td>22/09/2018</td>
                                             <td>ANMTSH1003</td>
                                             <td>IDR 90.000</td>
-                                            <td><Link to="Invoice.html" className="btn animico-btn animico-txt1">SEE DETAIL</Link></td>
+                                            <td><a href="/Invoice" className="btn animico-btn animico-txt1">SEE DETAIL</a></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -153,7 +156,8 @@ class Profile extends Component {
                         </div>
                     </div>
                 </div>
-                {/* CONTENT END */}
+                
+                <Footer />
             </div>
         );
     }

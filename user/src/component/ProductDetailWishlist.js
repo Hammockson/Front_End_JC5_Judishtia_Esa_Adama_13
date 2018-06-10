@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 class ProductDetailWishlist extends Component {
     render() {
         return (
             <div>
-                {/* CONTENT */}
+                <Header />
+                
                 <div>
                     {/* PRODUCT */}
                     <div className="container-fluid">
                         <div className="container-fluid" style={{paddingTop: '5%'}}>
-                        <Link to="/Profile" className="fa fa-angle-left"><span className="animico-txt3">   BACK TO PROFILE</span></Link>
+                        <a href="/Profile" className="fa fa-angle-left"><span className="animico-txt3">   BACK TO PROFILE</span></a>
                         </div>
                         <div className="container-fluid" style={{textAlign: 'center'}}>
                         <h4 className="animico-txt5">DETAIL PRODUCT</h4>
@@ -57,8 +60,8 @@ class ProductDetailWishlist extends Component {
                                 <span className="animico-txt5" style={{fontSize: 24}}>IDR 130.000</span>
                             </div>
                             <div style={{paddingTop: 20}}>
-                                <Link to="#" type="submit" className="btn animico-btn animico-tx7">ADD TO CART</Link>
-                                <Link to="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 9}} />
+                                <a href="#" type="submit" className="btn animico-btn animico-tx7">ADD TO CART</a>
+                                <a href="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 9}} />
                             </div>
                             </div>
                             <div className="col-md-2" />
@@ -67,7 +70,8 @@ class ProductDetailWishlist extends Component {
                         {/* PRODUCT END */}
                     </div>
                 </div>
-                {/* CONTENT END */}
+                
+                <Footer />
             </div>
         );
     }

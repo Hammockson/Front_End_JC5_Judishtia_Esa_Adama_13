@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Header from './Header'
+import Footer from './Footer'
 import { Link } from 'react-router-dom';
 
 class Homepage extends Component {
     render() {
         return (
             <div>
+                <Header />
                 {/* SLIDER */}
                 <div className="container-fluid banner"> 
                     <div className="col-md-3" />
@@ -17,18 +20,18 @@ class Homepage extends Component {
                             <div className="col-md-3" />
                         </div>
                         <div className="col-md-12" style={{marginTop: 40}}>
-                            <h4 className="animico-txt3b">"UNTIL ONE HAS LOVED AN ANIMAL,<br /> A PART OF ONE'S SOUL REMAINS UNAWAKENED"</h4>
+                            <h4 className="animico-txt5b">"UNTIL ONE HAS LOVED AN ANIMAL,<br /> A PART OF ONE'S SOUL REMAINS UNAWAKENED"</h4>
                             <p className="animico-txt5b">-Anatole France</p>
                         </div>
                         <div className="col-md-12" style={{marginTop: 40}}>
-                            <Link to="/ProductList" className="btn animico-btnc animico-txt1">SHOP NOW</Link>
+                            <a href="/ProductList" className="btn animico-btnc animico-txt1">SHOP NOW</a>
                         </div>
                         </div>
                     </div>
                     <div className="col-md-3" />
                 </div>
                 {/* NEW ARRIVAL */}
-                <div className="banner2">
+                <div id='mostpopular' className="banner2">
                     <div className="container-fluid" style={{marginBottom: 60}}>
                         <div className="col-md-2" />
                         <div className="col-md-8">
@@ -42,14 +45,14 @@ class Homepage extends Component {
                                     <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO HOODIE</p>
                                     <p className="animico-txt5" style={{fontSize: 18}}>ZEBRA SQUARE </p>
                                 </div><br />
-                                <Link to="/ProductDetail"><img src="img/Products/Product Detail/Hoodie-Zebra.png" /></Link>
+                                <a href="/ProductDetail"><img src="img/Products/Product Detail/Hoodie-Zebra.png" /></a>
                                 <span className="label label-success">IDR 130.000</span>
                                 <div style={{padding: 20}}>
-                                    <Link to="/ProductDetail">
+                                    <a href="/ProductDetail">
                                     <button className="btn animico-btnc animico-txt5b" style={{fontSize: 12}}>
                                         VIEW DETAIL
                                     </button>
-                                    </Link>
+                                    </a>
                                 </div>
                                 </div>
                                 <div className="col-md-4 banner-panda" style={{border: '6px solid #ffffff', padding: 30}}>
@@ -57,14 +60,14 @@ class Homepage extends Component {
                                     <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO BACKPACK</p>
                                     <p className="animico-txt5" style={{fontSize: 18}}>PANDA ADVENTURE </p>
                                 </div><br />
-                                <Link to="ProductDetail"><img src="img/Products/Product Detail/Backpack-Panda.png" /></Link>
+                                <a href="ProductDetail"><img src="img/Products/Product Detail/Backpack-Panda.png" /></a>
                                 <span className="label label-success">IDR 230.000</span>
                                 <div style={{padding: 20}}>
-                                    <Link to="ProductDetail">
+                                    <a href="ProductDetail">
                                     <button className="btn animico-btnc animico-txt5b" style={{fontSize: 12}}>
                                         VIEW DETAIL
                                     </button>
-                                    </Link>
+                                    </a>
                                 </div>
                                 </div>
                                 <div className="col-md-4 banner-owl" style={{border: '6px solid #ffffff', padding: 30}}>
@@ -72,14 +75,14 @@ class Homepage extends Component {
                                     <p className="animico-txt3" style={{fontSize: 12}}>ANIMICO TSHIRT</p>
                                     <p className="animico-txt5" style={{fontSize: 18}}>OWL SPIRIT </p>
                                 </div><br />
-                                <Link to="ProductDetail"><img src="img/Products/Product Detail/Owl Fix.png" /></Link>
+                                <a href="ProductDetail"><img src="img/Products/Product Detail/Owl Fix.png" /></a>
                                 <span className="label label-success">IDR 90.000</span>
                                 <div style={{padding: 20}}>
-                                    <Link to="ProductDetail">
+                                    <a href="ProductDetail">
                                     <button className="btn animico-btnc animico-txt5b" style={{fontSize: 12}}>
                                         VIEW DETAIL
                                     </button>
-                                    </Link>
+                                    </a>
                                 </div>
                                 </div>
                             </div>
@@ -115,7 +118,7 @@ class Homepage extends Component {
                                     <div className="col-md-8">
                                         <div className="col-md-6">
                                         <div style={{textAlign: 'center'}}>
-                                        <Link to="ProductDetail"><img src="img/Products/Product Detail/Hoodie-Zebra.png" style={{maxWidth: '100%'}} /></Link>
+                                        <a href="ProductDetail"><img src="img/Products/Product Detail/Hoodie-Zebra.png" style={{maxWidth: '100%'}} /></a>
                                         </div>
                                         </div>
                                         <div className="col-md-6" style={{paddingBottom: 30, paddingTop: 30}}>
@@ -150,8 +153,8 @@ class Homepage extends Component {
                                             <span className="animico-txt5" style={{fontSize: 18}}>IDR 130.000</span>
                                         </div>
                                         <div style={{paddingTop: 10}}>
-                                            <Link to="#" type="submit" className="btn animico-btnc animico-txt5" style={{fontSize: 10}}>ADD TO CART</Link>
-                                            <Link to="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 8}} />
+                                            <a href="#" type="submit" className="btn animico-btnc animico-txt5" style={{fontSize: 10}}>ADD TO CART</a>
+                                            <a href="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 8}} />
                                         </div>
                                         </div>
                                     </div>
@@ -169,7 +172,7 @@ class Homepage extends Component {
                                     <div className="col-md-8">
                                         <div className="col-md-6">
                                         <div style={{textAlign: 'center'}}>
-                                        <Link to="ProductDetail"><img src="img/Products/Product Detail/Snake Tshirt Fix.png" style={{maxWidth: '100%'}} /></Link>
+                                        <a href="ProductDetail"><img src="img/Products/Product Detail/Snake Tshirt Fix.png" style={{maxWidth: '100%'}} /></a>
                                         </div>
                                         </div>
                                         <div className="col-md-6" style={{paddingBottom: 30, paddingTop: 30}}>
@@ -204,8 +207,8 @@ class Homepage extends Component {
                                             <span className="animico-txt5" style={{fontSize: 18}}>IDR 130.000</span>
                                         </div>
                                         <div style={{paddingTop: 10}}>
-                                            <Link to="#" type="submit" className="btn animico-btnc animico-txt5" style={{fontSize: 10}}>ADD TO CART</Link>
-                                            <Link to="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 8}} />
+                                            <a href="#" type="submit" className="btn animico-btnc animico-txt5" style={{fontSize: 10}}>ADD TO CART</a>
+                                            <a href="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 8}} />
                                         </div>
                                         </div>
                                     </div>
@@ -223,7 +226,7 @@ class Homepage extends Component {
                                     <div className="col-md-8">
                                         <div className="col-md-6">
                                         <div style={{textAlign: 'center'}}>
-                                        <Link to="ProductDetail"><img src="img/Products/Product Detail/Backpack-Panda.png" style={{maxWidth: '100%'}} /></Link>
+                                        <a href="ProductDetail"><img src="img/Products/Product Detail/Backpack-Panda.png" style={{maxWidth: '100%'}} /></a>
                                         </div>
                                         </div>
                                         <div className="col-md-6" style={{paddingBottom: 30, paddingTop: 30}}>
@@ -258,8 +261,8 @@ class Homepage extends Component {
                                             <span className="animico-txt5" style={{fontSize: 18}}>IDR 130.000</span>
                                         </div>
                                         <div style={{paddingTop: 10}}>
-                                            <Link to="#" type="submit" className="btn animico-btnc animico-txt5" style={{fontSize: 10}}>ADD TO CART</Link>
-                                            <Link to="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 8}} />
+                                            <a href="#" type="submit" className="btn animico-btnc animico-txt5" style={{fontSize: 10}}>ADD TO CART</a>
+                                            <a href="#" type="submit" className="fa fa-heart btn animico-btn2" style={{padding: 8}} />
                                         </div>
                                         </div>
                                     </div>
@@ -270,12 +273,12 @@ class Homepage extends Component {
                                 </div>
                             </div>
                             </div>
-                            <Link to="#carousel-example-generic" className="left control-carousel hidden-xs" data-slide="prev">
+                            <a href="#carousel-example-generic" className="left control-carousel hidden-xs" data-slide="prev">
                             <i className="fa fa-angle-left" />
-                            </Link>
-                            <Link to="#carousel-example-generic" className="right control-carousel hidden-xs" data-slide="next">
+                            </a>
+                            <a href="#carousel-example-generic" className="right control-carousel hidden-xs" data-slide="next">
                             <i className="fa fa-angle-right" />
-                            </Link>
+                            </a>
                         </div>
                         {/* </section> */}
                         </div>
@@ -284,7 +287,7 @@ class Homepage extends Component {
                         <div className="animico-txt3" style={{textAlign: 'center', padding: 30}}>
                         <h5 className="animico-txt4">SEE MORE IN</h5>
                         <h3 className="animico-txt1">ALL <span className="animico-txt5">COLLECTIONS</span></h3>
-                        <Link to="/ProductList" className="btn animico-btnc animico-txt3">ALL COLLECTION</Link>
+                        <a href="/ProductList" className="btn animico-btnc animico-txt3">ALL COLLECTION</a>
                         </div>
                     </div>
                 </div>
@@ -294,13 +297,13 @@ class Homepage extends Component {
                         <p>COMING SOON!</p>
                         <h1 className="animico-txt5b">ANIMICO <span className="animico-txt1b">SHOES</span></h1>
                         <p>Get Special Price for Pre Order</p>
-                        <Link to="/ProductList" className="btn animico-btnb animico-txt1" style={{marginTop: 20}}>Pre Order Now</Link>
+                        <a href="/ProductList" className="btn animico-btnb animico-txt1" style={{marginTop: 20}}>Pre Order Now</a>
                     </div>
                     <div className="col-md-6 animico-txt2b banner-promo-right" style={{backgroundColor: '#121d39', textAlign: 'center', padding: 31}}>
                         <p>ALL BACKPACK!</p>
                         <h1 className="animico-txt5b">DISCOUNT <span className="animico-txt1b">30%</span></h1>
                         <p>Grab em'now!</p>
-                        <Link to="/ProductList" className="btn animico-btnc animico-txt1" style={{marginTop: 20}}>See Collection</Link>
+                        <a href="/ProductList" className="btn animico-btnc animico-txt1" style={{marginTop: 20}}>See Collection</a>
                     </div>
                 </div>
                 {/* NEWSLETTER */}
@@ -318,7 +321,7 @@ class Homepage extends Component {
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                             </div>
                             <div style={{textAlign: 'center', padding: 10}}>
-                                <Link to="#" type="submit" className="btn animico-btnc animico-txt3">SUBSCRIBE</Link>
+                                <a href="#" type="submit" className="btn animico-btnc animico-txt3">SUBSCRIBE</a>
                             </div>
                             </form>
                         </div>
@@ -327,7 +330,7 @@ class Homepage extends Component {
                     </div>
                 </div>
 
-
+                <Footer />
             </div>
         );
     }

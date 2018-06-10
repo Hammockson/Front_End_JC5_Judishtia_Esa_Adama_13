@@ -12,9 +12,6 @@ import Login from './component/Login';
 import ProductDetail from './component/ProductDetail';
 import ProductDetailWishlist from './component/ProductDetailWishlist';
 import ProductList from './component/ProductList';
-import './style/style2.css';
-import './style/bootstrap.css';
-import './style/fonts/web-fonts-with-css/css/fontawesome-all.css';
 import { Route } from 'react-router-dom';
 
 
@@ -23,9 +20,8 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Header />
       <Route exact path="/" component={Homepage}/>
-      <Route exact path="/Homepage" component={Homepage}/>
+      <Route path="/Homepage" component={Homepage}/>
       <Route path="/Login" component={Login}/>
       <Route path="/Register" component={Register}/>
       <Route path="/Cart" component={Cart}/>
@@ -36,7 +32,6 @@ class App extends Component {
       <Route path="/ProductDetailWishlist" component={ProductDetailWishlist}/>
       <Route path="/ProductDetail" component={ProductDetail}/>
       <Route path="/ProductList" component={ProductList}/>
-      <Footer />
       </div>
     );
   }

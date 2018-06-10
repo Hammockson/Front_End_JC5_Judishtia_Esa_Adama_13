@@ -317,7 +317,7 @@ hr {
 
 .anim-container {
   /* width: 100%; */
-  background: url(/Animico/user/public/img/bg1.jpg) no-repeat center;
+  background: url(../img/bg1.jpg) no-repeat center;
   height: 100%;
   margin: 0 auto;
   height: 100%; 
@@ -390,7 +390,7 @@ hr {
 
 .banner2 
 {
-	background-image: url(/img/bg2.png);
+	background-image: url(/img/bg2-min.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -400,7 +400,7 @@ hr {
 
 .banner3 
 {
-	background-image: url(/img/bg3.png);
+	background-image: url(/img/bg3-min.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -911,7 +911,7 @@ hr {
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: #121d39;
+  background-color: rgb(39, 40, 44);
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   border: 1px solid rgb(33, 33, 33);
