@@ -1,9 +1,84 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 class Products extends Component {
-    render() {
+  state = {
+    dataproduk: [],
+}
+componentDidMount(){
+    axios.get('http://localhost:8002/Product').then(
+        (ambilData) => {
+            console.log(ambilData.data);
+            this.setState({
+                dataproduk: ambilData.data
+            });
+        }
+    )
+}
+
+hapusData = (e) => {
+  axios.post(`http://localhost:8002/RemoveProduct`, {
+      inputNol: e,
+    }).then(
+      (ambilData) => {
+          console.log(ambilData.data);
+          if (ambilData.data === 1) {
+            axios.get('http://localhost:8002/Product').then(
+              (ambilData) => {
+                  console.log(ambilData.data);
+                  this.setState({
+                      dataproduk: ambilData.data
+                  });
+              }
+          )
+          }
+        })
+          console.log(e)
+      }
+  
+      render() {
+        const hasil = this.state.dataproduk.map(
+          (isi, urutan) => {
+              var nomor = urutan + 1;
+              var produkID = isi.id;
+              var kategoriID = isi.id_category;
+              var ukuranproduk = isi.id_size;
+              var namaproduk = isi.product_name;
+              var hargaproduk = isi.product_price;
+              var detailproduk = isi.product_detail;
+              var gambarproduk = isi.product_image;
+               
+              return <tr key={urutan}>
+              <td scope="col">{nomor}</td>
+              <td scope="col">{namaproduk}</td>
+              <td scope="col">{kategoriID}</td>
+              <td scope="col">{hargaproduk}</td>
+              <td scope="col">{gambarproduk}</td>
+              <td scope="col">{ukuranproduk}</td>
+              <td scope="col">{detailproduk}</td>
+              <td scope="col">
+                <Link to={{
+                  pathname: "/EditProduct",
+                  state:{
+                    prodID: produkID,
+                    katID: kategoriID,
+                    prodsize: ukuranproduk,
+                    prodnama: namaproduk,
+                    prodharga: hargaproduk,
+                    prodetail: detailproduk,
+                    prodgarmabar: gambarproduk
+
+
+                  }
+                }}>
+                <button className="btn btn-warning" style={{fontSize: 12}}><span className="fa fa-edit" aria-hidden="true" /></button></Link>
+                <button type="button" onClick={() => this.hapusData(produkID)}className="btn btn-danger" style={{fontSize: 12}}><span className="fa fa-trash" aria-hidden="true" /></button>
+              </td>
+            </tr>
+          }
+      );
         return (
           <div className="main-content">
           <Header />
@@ -15,184 +90,46 @@ class Products extends Component {
                       <h2>PRODUCTS</h2>
                     </div>
                   </div>
-                </div>
-                <div style={{padding: 40, textAlign: 'center'}}>
-                  <Link to="/AddCategory" type="button" className="btn btn-primary">
-                    ADD CATEGORY
-                  </Link>
-                </div>
+                </div><br/><br/><br/>
               </div>
               {/* TSHIRT */}
               <div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-2"> </div>
-                    <div className="col-md-8" style={{backgroundColor: '#3e3f3a', color: 'white'}}>
-                      <div className="row" style={{padding: 10}}>
-                        <div className="col-md-6"><h4 style={{padding: 10}}>TSHIRT</h4></div>
-                        <div className="col-md-6" style={{textAlign: 'right'}}>
-                          <button className="btn btn-secondary" style={{fontSize: 12}}>RENAME</button>
-                          <button className="btn btn-danger" style={{fontSize: 12}}>REMOVE CATEGORY</button>
-                        </div>
-                      </div>
+                    
+                    <div className="col-md-12">
                       <div>
                         <div>
-                          <table className="container table-active" style={{fontSize: 12}}>
+                          <table className="table table-bordered table-hover">
                             <thead>
-                              <tr>
-                                <th scope="col">IMAGE</th>
-                                <th scope="col">PRODUCT NAME</th>
+                              <tr class="table-dark">
+                                <th scope="col">No.</th>
+                                <th scope="col">NAME</th>
+                                <th scope="col">CATEGORY</th>
                                 <th scope="col">PRICE</th>
+                                <th scope="col">IMAGE</th>
+                                <th scope="col">SIZE</th>
+                                <th scope="col">DETAIL</th>
                                 <th scope="col">ACTION</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/tshirt.png" /></Link></th>
-                                <td>ANIMICO TSHIRT - OWL SPIRIT</td>
-                                <td>IDR 90.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/tshirt.png" /></Link></th>
-                                <td>ANIMICO TSHIRT - SNAKE MASTER</td>
-                                <td>IDR 90.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/tshirt.png" /></Link></th>
-                                <td>ANIMICO TSHIRT - WHALE MANIA</td>
-                                <td>IDR 90.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
+                              {hasil}
                             </tbody>
                           </table>
                         </div>
                       </div>
                       <div style={{padding: 10, textAlign: 'center'}}>
-                        <Link to="/AddProduct" type="button" className="btn btn-primary">
-                          ADD PRODUCT
+                        <Link to="/AddProduct">
+                        <button type="button" class="btn btn-success" style={{fontWeight:'bold'}}>ADD PRODUCT   <span className="fa fa-plus" aria-hidden="true" /></button>
                         </Link>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-2"> </div>
+                  
                 </div>
               </div>
-              {/* HOODIE */}
-              <div style={{paddingTop: 50}}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-2"> </div>
-                    <div className="col-md-8" style={{backgroundColor: '#3e3f3a', color: 'white'}}>
-                      <div className="row" style={{padding: 10}}>
-                        <div className="col-md-6"><h4>HOODIE</h4></div>
-                        <div className="col-md-6" style={{textAlign: 'right'}}>
-                          <button className="btn btn-secondary" style={{fontSize: 12}}>RENAME</button>
-                          <button className="btn btn-danger" style={{fontSize: 12}}>REMOVE CATEGORY</button>
-                        </div>
-                      </div>
-                      <div>
-                        <div>
-                          <table className=" container table-active" style={{fontSize: 12}}>
-                            <thead>
-                              <tr>
-                                <th scope="col">IMAGE</th>
-                                <th scope="col">PRODUCT NAME</th>
-                                <th scope="col">PRICE</th>
-                                <th scope="col">ACTION</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/hoodie.png" /></Link></th>
-                                <td>ANIMICO HOODIE - ZEBRA SQUARE</td>
-                                <td>IDR 130.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/hoodie.png" /></Link></th>
-                                <td>ANIMICO HOODIE - LION PRIDE</td>
-                                <td>IDR 130.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/hoodie.png" /></Link></th>
-                                <td>ANIMICO HOODIE - ELELPHANT FAN</td>
-                                <td>IDR 130.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                      <div style={{padding: 10, textAlign: 'center'}}>
-                        <Link to="/AddProduct" type="button" className="btn btn-primary">
-                          ADD PRODUCT
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="col-md-2"> </div>
-                  </div>
-                </div>
-              </div>
-              {/* BACKPACK */}
-              <div style={{paddingTop: 50}}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-2"> </div>
-                    <div className="col-md-8" style={{backgroundColor: '#3e3f3a', color: 'white'}}>
-                      <div className="row" style={{padding: 10}}>
-                        <div className="col-md-6"><h4>BACKPACK</h4></div>
-                        <div className="col-md-6" style={{textAlign: 'right'}}>
-                          <button className="btn btn-secondary" style={{fontSize: 12}}>RENAME</button>
-                          <button className="btn btn-danger" style={{fontSize: 12}}>REMOVE CATEGORY</button>
-                        </div>
-                      </div>
-                      <div>
-                        <div>
-                          <table className=" container table-active" style={{fontSize: 12}}>
-                            <thead>
-                              <tr>
-                                <th scope="col">IMAGE</th>
-                                <th scope="col">PRODUCT NAME</th>
-                                <th scope="col">PRICE</th>
-                                <th scope="col">ACTION</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/backpack.png" /></Link></th>
-                                <td>ANIMICO BACKPACK - ADVENTURE</td>
-                                <td>IDR 330.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/backpack.png" /></Link></th>
-                                <td>ANIMICO BACKPACK - FRESH</td>
-                                <td>IDR 330.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                              <tr>
-                                <th scope="row"><Link to="Product-Detail.html"><img src="images/icon/backpack.png" /></Link></th>
-                                <td>ANIMICO BACKPACK - ELEGANT</td>
-                                <td>IDR 330.000</td>
-                                <td><Link to="#" className="btn btn-danger" style={{fontSize: 12}}>REMOVE</Link></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                      <div style={{padding: 10, textAlign: 'center'}}>
-                        <Link to="/AddProduct" type="button" className="btn btn-primary">
-                          ADD PRODUCT
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="col-md-2"> </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             <div className="col-md-12" style={{textAlign: 'center'}}>
               <div className="copyright">

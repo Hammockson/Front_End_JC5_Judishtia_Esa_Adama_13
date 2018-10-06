@@ -1,17 +1,28 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
-import { Link } from 'react-router-dom';
+import Cookies from 'universal-cookie'
+import HeaderLogged from './HeaderLogged'
+import { Link, Redirect } from 'react-router-dom';
+
+const cookies = new Cookies()
 
 class Cart extends Component {
     render() {
+        if(cookies.get('sessioniduser') === undefined) {
+            return <Redirect to="/Login"/>
+        }
+
+        
+        let mycookie = cookies.get('sessioniduser');
+        let navigation = (mycookie !== undefined) ? <HeaderLogged /> : <Header />
         return (
             <div>
-                <Header />
+                {navigation}
                 
                 <div style={{paddingTop: '5%', paddingBottom: '10%'}}>
                     <div className="container">
-                        <h3 className="animico-txt5" style={{paddingBottom: 10}}>MY CART<span style={{fontSize: 12}}>/ YOU HAVE 2 ITEMS IN YOUR CART</span></h3>
+                        <h3 className="animico-txt5" style={{paddingBottom: 10}}>MY CART</h3>
                     </div>
                     <div className="container">
                         <div className="col-md-12" style={{backgroundColor: '#222', marginBottom: 50}}>
@@ -49,14 +60,65 @@ class Cart extends Component {
                         </div>
                         </div>
                         <div>
-                        <div className="col-md-5" style={{backgroundColor: '#222'}}>
-                            <div className="col-md-2">
-                            <img src="img/shipping-truck--free-transport-icons-10.png" style={{width: 70, height: 70}} />
-                            </div>
-                            <div className="col-md-10 animico-txt2b">
-                            <p style={{fontSize: 10, padding: 30}}>IDR 50.000 SHIPPING CHARGE APPLIED</p>
-                            </div>
+                        <div className="col-md-5" style={{backgroundColor: '#222', padding: 50}}> 
+                        <div className="animico-txt5b" style={{marginBottom: 50}}>
+                        <h3>BILLING ADDRESS</h3>
                         </div>
+                        <div className="form-check" style={{color: "white"}}>
+                            <input className="form-check-input" type="checkbox" defaultValue id="defaultCheck1" />
+                            <label className="form-check-label" htmlFor="defaultCheck1">
+                                Default Address
+                            </label>
+                        </div><br/>
+ 
+                        <div className="animico-txt1b">
+                        <div className="loginbox" style={{fontSize: 12}}>
+                            <form>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputFirstName1">FIRST NAME*</label>
+                                <input type="name" className="form-control" id="exampleInputFirstName1" aria-describedby="emailHelp" placeholder="Enter First Name" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputLastName1">LAST NAME*</label>
+                                <input type="name" className="form-control" id="exampleInputLastName1" placeholder="Enter Last Name" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputAddress1">ADDRESS*</label>
+                                <input type="text" className="form-control" id="exampleInputAddress1" placeholder="Enter Address" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPostcode1">PHONE NUMBER*</label>
+                                <input type="number" className="form-control" id="exampleInputPostCode1" placeholder="Enter Phone Number" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPostcode1">EMAIL*</label>
+                                <input type="email" className="form-control" id="exampleInputPostCode1" placeholder="Enter Email" />
+                            </div>
+                            </form>
+                        </div><br/><br/>
+                        <div className="animico-txt2" style={{color: "white"}}> 
+                        <h3>Payment Method</h3>
+                        </div><br/>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" defaultValue id="defaultCheck1" name="payment" />
+                            <label className="form-check-label" htmlFor="defaultCheck1">
+                                Mandiri - 111 0001234567
+                            </label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" defaultValue id="defaultCheck1" name="payment" />
+                            <label className="form-check-label" htmlFor="defaultCheck1">
+                                BNI - 121 0001234567
+                            </label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" defaultValue id="defaultCheck1" name="payment"/>
+                            <label className="form-check-label" htmlFor="defaultCheck1">
+                                BCA - 131 0001234567
+                            </label>
+                        </div>
+                        </div> 
+                    </div>
                         <div className="col-md-1" />
                         <div className="col-md-1" />
                         <div className="col-md-5 animico-txt4b">
@@ -81,12 +143,13 @@ class Cart extends Component {
                             </div>
                             </div>
                             <div style={{textAlign: 'right'}}>
-                            <a href="/Checkout" className="btn animico-btnc animico-txt5b">PROCEED FOR PAYMENT</a>
+                            <a href="/Checkout" className="btn animico-btnc animico-txt5b">CHECKOUT</a>
                             </div>
                         </div>
                         </div>
                     </div>
                 </div>
+                
                 
                 <Footer />
             </div>

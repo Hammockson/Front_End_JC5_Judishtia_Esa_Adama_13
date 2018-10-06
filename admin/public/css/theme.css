@@ -91,11 +91,11 @@ p {
     border-radius: 3px;
 }
 
-.btn {
+/* .btn {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-}
+} */
 
 /* ----- Typography ----- */
 body {
@@ -103,12 +103,12 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.625;
-    color: #666;
+    /* color: #666; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -118,7 +118,7 @@ h6 {
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
-}
+} */
 
 h1 {
     font-size: 36px;

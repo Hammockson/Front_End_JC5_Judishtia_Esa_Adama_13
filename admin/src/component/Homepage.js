@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import Cookies from 'universal-cookie'
+
+const cookies = new Cookies()
 
 class Homepage extends Component {
+ 
+
+  
     render() {
+      if(cookies.get('sessionid') === undefined) return <Redirect to="/Login"/>
         return (
             <div>
               <Header />
@@ -92,7 +99,7 @@ class Homepage extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="row">
+                      {/* <div className="row">
                         <div className="col-lg-6">
                           <div className="au-card recent-report">
                             <div className="au-card-inner">
@@ -153,7 +160,7 @@ class Homepage extends Component {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
